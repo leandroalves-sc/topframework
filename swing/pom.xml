@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.topsoft.topframework</groupId>
+		<artifactId>topframework</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>topframework-swing</artifactId>
+	<dependencies>
+		<dependency>
+			<groupId>com.topsoft.topframework</groupId>
+			<artifactId>topframework-base</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.topsoft.topframework</groupId>
+			<artifactId>topframework-ftp</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>de.sciss</groupId>
+			<artifactId>weblaf-ui</artifactId>
+			<version>1.28</version>
+		</dependency>
+		<dependency>
+			<groupId>de.sciss</groupId>
+			<artifactId>weblaf-core</artifactId>
+			<version>1.28</version>
+		</dependency>
+		<dependency>
+			<groupId>com.miglayout</groupId>
+			<artifactId>miglayout-swing</artifactId>
+			<version>4.2</version>
+		</dependency>
+
+	</dependencies>
+</project>
