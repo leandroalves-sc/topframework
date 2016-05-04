@@ -12,19 +12,19 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Order;
 import javax.persistence.criteria.Root;
 
-import com.topsoft.topframework.base.dao.DAO;
+import com.topsoft.topframework.base.dao.BaseDAO;
 import com.topsoft.topframework.base.domain.Entity;
 import com.topsoft.topframework.base.paging.DataPage;
 import com.topsoft.topframework.base.paging.Page;
 
-public abstract class DAOImpl<T extends Entity<ID>, ID> implements DAO<T, ID> {
+public abstract class BaseBaseDAOImpl<T extends Entity<ID>, ID> implements BaseDAO<T, ID> {
 
 	@PersistenceContext
 	protected EntityManager entityManager;
 
 	private Class<T> entityClass;
 
-	public DAOImpl() {
+	public BaseBaseDAOImpl() {
 		this.entityClass = getPersistentClass();
 	}
 

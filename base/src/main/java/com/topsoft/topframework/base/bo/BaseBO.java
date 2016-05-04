@@ -1,14 +1,12 @@
-package com.topsoft.topframework.base.dao;
+package com.topsoft.topframework.base.bo;
 
 import java.util.List;
-
-import javax.persistence.criteria.CriteriaQuery;
 
 import com.topsoft.topframework.base.domain.Entity;
 import com.topsoft.topframework.base.paging.DataPage;
 import com.topsoft.topframework.base.paging.Page;
 
-public interface DAO<T extends Entity<ID>,ID>{
+public interface BaseBO<T extends Entity<ID>,ID>{
 
 	T insert( T domain );
 	T update( T domain );
@@ -19,8 +17,4 @@ public interface DAO<T extends Entity<ID>,ID>{
 	T findByID( ID id );
 	List<T> findAll();
 	DataPage<T> findAllPage( Page p );
-	
-	T readObject( CriteriaQuery<T> query );
-	List<T> readAllObjects( CriteriaQuery<T> query );
-	DataPage<T> readAllPagedObjects( CriteriaQuery<T> query, Page page );
 }
