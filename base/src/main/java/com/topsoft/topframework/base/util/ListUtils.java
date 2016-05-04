@@ -8,7 +8,7 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.topsoft.topframework.base.domain.Entity;
+import com.topsoft.topframework.base.domain.BaseEntity;
 import com.topsoft.topframework.base.validator.Validator;
 import com.topsoft.topframework.base.validator.impl.IntegerValidator;
 
@@ -16,11 +16,11 @@ public class ListUtils {
 
 	private static final String OBJECT_SEPARATOR = ".";
 
-	public static <ID extends Serializable, T extends Entity<?>> List<ID> listOf(List<T> list, String nestedAttribute, Class<ID> type) {
+	public static <ID extends Serializable, T extends BaseEntity<?>> List<ID> listOf(List<T> list, String nestedAttribute, Class<ID> type) {
 		return listOf(list, nestedAttribute, type, false);
 	}
 
-	public static <ID extends Serializable, T extends Entity<?>> List<ID> listOf(List<T> list, String nestedAttribute, Class<ID> type, boolean includeNull) {
+	public static <ID extends Serializable, T extends BaseEntity<?>> List<ID> listOf(List<T> list, String nestedAttribute, Class<ID> type, boolean includeNull) {
 
 		List<ID> retorno = new ArrayList<ID>();
 
@@ -42,7 +42,7 @@ public class ListUtils {
 	}
 
 	@SuppressWarnings("unchecked")
-	private static <ID extends Serializable, T extends Entity<?>> ID getNestedValue(Class<ID> type, T dto, String attribute) throws IllegalArgumentException, IllegalAccessException, SecurityException, NoSuchMethodException, InvocationTargetException, InstantiationException {
+	private static <ID extends Serializable, T extends BaseEntity<?>> ID getNestedValue(Class<ID> type, T dto, String attribute) throws IllegalArgumentException, IllegalAccessException, SecurityException, NoSuchMethodException, InvocationTargetException, InstantiationException {
 
 		if (attribute.indexOf(OBJECT_SEPARATOR) != -1) {
 
@@ -77,7 +77,7 @@ public class ListUtils {
 		return null;
 	}
 
-	private static <T extends Entity<?>> Field getField(T dto, String attribute) {
+	private static <T extends BaseEntity<?>> Field getField(T dto, String attribute) {
 
 		for (Class<?> classe = dto.getClass(); classe != null; classe = classe.getSuperclass())
 			for (Field field : classe.getDeclaredFields())
